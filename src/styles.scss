@@ -196,6 +196,40 @@ nav.navbar {
   }
 }
 
+.network-cybex {
+  .hero.welcome.is-info {
+    background: linear-gradient(to right, #d32e79, #b30e59);
+  }
+
+  .button.is-primary {
+    background-color: #d32e79;
+  }
+
+  .button.is-primary:hover {
+    background-color: #d32e79;
+  }
+
+  .card-header-icon {
+    color: #d32e79;
+  }
+  .navbar {
+    background: linear-gradient(to right, #d32e79, #b30e59);
+  }
+
+  .tabs li.is-active a {
+    color: #d32e79;
+    border-bottom-color: #d32e79;
+  }
+
+  a {
+    color: #d32e79;
+  }
+
+  .navbar-item a {
+    color: #4a4a4a;
+  }
+}
+
 .network-kusama {
   .hero.welcome.is-info {
     background: linear-gradient(to right, #d32e79, #b30e59);
