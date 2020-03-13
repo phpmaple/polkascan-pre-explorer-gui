@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  jsonApiRootUrl: 'http://47.101.64.138:8080/api/v1/',
+  jsonApiRootUrl: 'https://scan-sub.cybex.io/api/v1/',
   networkName: 'Cybex',
   networkTokenSymbol: 'CYB',
   networkTokenDecimals: 0
