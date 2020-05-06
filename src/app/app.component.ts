@@ -20,33 +20,37 @@
  * app.component.ts
  */
 
-import { Component } from '@angular/core';
-import {environment} from '../environments/environment';
-import {NavigationEnd, NavigationStart, Router} from '@angular/router';
-import { TranslateService } from '@ngx-translate/core';
+import { Component } from "@angular/core";
+import { environment } from "../environments/environment";
+import { NavigationEnd, NavigationStart, Router } from "@angular/router";
+import { TranslateService } from "@ngx-translate/core";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.scss"],
 })
 export class AppComponent {
-  title = 'Polkascan';
+  title = "CybexScan";
 
   public environment = environment;
   public showNavigation = false;
   public showSubmenus = true;
-  public langs = ['en', 'de', 'fr', 'it', 'es', 'zh', 'ja', 'ko', 'ru', 'uk'];
-  public selectedLanguage = 'en';
+  public langs = ["en", "de", "fr", "it", "es", "zh", "ja", "ko", "ru", "uk"];
+  public selectedLanguage = "en";
 
   constructor(private router: Router, private translate: TranslateService) {
     router.events.subscribe((val) => {
-        this.showNavigation = false;
+      this.showNavigation = false;
     });
     translate.addLangs(this.langs);
-    translate.setDefaultLang('en');
+    translate.setDefaultLang("en");
 
-    this.selectedLanguage = translate.getBrowserLang().match(/en|de|fr|it|es|zh|ja|ko|ru|uk/) ? translate.getBrowserLang() : 'en';
+    this.selectedLanguage = translate
+      .getBrowserLang()
+      .match(/en|de|fr|it|es|zh|ja|ko|ru|uk/)
+      ? translate.getBrowserLang()
+      : "en";
     translate.use(this.selectedLanguage);
   }
 
@@ -57,32 +61,33 @@ export class AppComponent {
   toggleSubmenus() {
     this.showSubmenus = false;
 
-    setTimeout(() => { this.showSubmenus = true; }, 300);
-
+    setTimeout(() => {
+      this.showSubmenus = true;
+    }, 300);
   }
 
   langsTitle(selectedLang: string) {
     switch (selectedLang) {
-      case 'de':
-        return 'Deutsche';
-      case 'fr':
-        return 'Française';
-      case 'it':
-        return 'Italiano';
-      case 'es':
-        return 'Español';
-      case 'zh':
-        return '中國';
-      case 'ja':
-        return '日本語';
-      case 'ko':
-        return '한국어';
-      case 'ru':
-        return 'Русский';
-      case 'uk':
-        return 'Українська';
+      case "de":
+        return "Deutsche";
+      case "fr":
+        return "Française";
+      case "it":
+        return "Italiano";
+      case "es":
+        return "Español";
+      case "zh":
+        return "中國";
+      case "ja":
+        return "日本語";
+      case "ko":
+        return "한국어";
+      case "ru":
+        return "Русский";
+      case "uk":
+        return "Українська";
       default:
-        return 'English';
+        return "English";
     }
   }
 }
